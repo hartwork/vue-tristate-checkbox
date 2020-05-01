@@ -1,0 +1,222 @@
+<!--
+  Copyright (C) 2020 Sebastian Pipping <sebastian@pipping.org>
+
+  Licensed under the MIT license
+-->
+<head>
+  <style>
+    td, th {
+      border: 1px solid #f0f0f0;
+      padding: 4px 6px 4px 6px;
+    }
+
+    td:nth-child(3), td:nth-child(4) {
+      font-family: monospace;
+    }
+
+    input[type="submit"] {
+      margin-top: 20px;
+      margin-right: 10px;
+    }
+  </style>
+
+  <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script src="vue_cycling_tristate_checkbox_native.js"></script>
+</head>
+<body>
+  <h1>Cycling Tristate Checkbox Vue.js Component</h1>
+
+  <form method="GET">
+    <div id="app">
+      <table>
+        <tr>
+          <th>Description</th>
+          <th>Demo</th>
+          <th>State</th>
+          <th>Code</th>
+        </tr>
+        <tr>
+          <td>Initially unchecked</td>
+          <td>
+            <tristate-checkbox ref="ref3"></tristate-checkbox>
+          </td>
+          <td>{{ repr(($refs.ref3 || {}).state) }}</td>
+          <td><!-- filled dynamically --></td>
+        </tr>
+        <tr>
+          <td>Initially checked</td>
+          <td>
+            <tristate-checkbox ref="ref4" checked></tristate-checkbox>
+          </td>
+          <td>{{ repr(($refs.ref4 || {}).state) }}</td>
+          <td><!-- filled dynamically --></td>
+        </tr>
+        <tr>
+          <td>Initially indeterminate</td>
+          <td>
+            <tristate-checkbox ref="ref5" indeterminate></tristate-checkbox>
+          </td>
+          <td>{{ repr(($refs.ref5 || {}).state) }}</td>
+          <td><!-- filled dynamically --></td>
+        </tr>
+        <tr>
+          <td>With <tt>v-model</tt></td>
+          <td>
+            <tristate-checkbox ref="ref7" v-model="tribool_ref"></tristate-checkbox>
+          </td>
+          <td>{{ repr(tribool_ref) }}</td>
+          <td><!-- filled dynamically --></td>
+        </tr>
+        <tr>
+          <td>With <tt>name</tt> (for form submission)</td>
+          <td>
+            <tristate-checkbox ref="ref15" name="name15" checked></tristate-checkbox>
+          </td>
+          <td>{{ repr(($refs.ref15 || {}).state) }}</td>
+          <td><!-- filled dynamically --></td>
+        </tr>
+        <tr>
+          <td>With <tt>name</tt> and custom <tt>value</tt>/<tt>indeterminate-value</tt></td>
+          <td>
+            <tristate-checkbox ref="ref16" name="name16" value="yes" indeterminate-value="maybe" indeterminate></tristate-checkbox>
+          </td>
+          <td>{{ repr(($refs.ref16 || {}).state) }}</td>
+          <td><!-- filled dynamically --></td>
+        </tr>
+        <tr>
+          <td>Custom <tt>true-value</tt>/<tt>false-value</tt>/<tt>null-value</tt></td>
+          <td>
+            <tristate-checkbox ref="ref8" v-model="custom_tribool_ref" true-value="yes" false-value="no" null-value="maybe"></tristate-checkbox>
+          </td>
+          <td>{{ repr(custom_tribool_ref) }}</td>
+          <td><!-- filled dynamically --></td>
+        </tr>
+        <tr>
+          <td>With label, unbound, surrounding</td>
+          <td>
+            <label onmousedown="return false">
+              <tristate-checkbox ref="ref9"></tristate-checkbox>
+              <nobr>Click me!</nobr>
+            </label>
+          </td>
+          <td>{{ repr(($refs.ref9 || {}).state) }}</td>
+          <td><!-- filled dynamically --></td>
+        </tr>
+        <tr>
+          <td>With label, bound, sibling</td>
+          <td>
+            <tristate-checkbox ref="ref10" id="id10"></tristate-checkbox>
+            <label for="id10" onmousedown="return false">
+              <nobr>Click me!</nobr>
+            </label>
+          </td>
+          <td>{{ repr(($refs.ref10 || {}).state) }}</td>
+          <td><!-- filled dynamically --></td>
+        </tr>
+        <tr>
+          <td>Disabled unchecked</td>
+          <td>
+            <tristate-checkbox ref="ref11" disabled></tristate-checkbox>
+          </td>
+          <td>{{ repr(($refs.ref11 || {}).state) }}</td>
+          <td><!-- filled dynamically --></td>
+        </tr>
+        <tr>
+          <td>Disabled checked</td>
+          <td>
+            <tristate-checkbox ref="ref12" disabled checked></tristate-checkbox>
+          </td>
+          <td>{{ repr(($refs.ref12 || {}).state) }}</td>
+          <td><!-- filled dynamically --></td>
+        </tr>
+        <tr>
+          <td>Disabled indeterminate</td>
+          <td>
+            <tristate-checkbox ref="ref13" disabled indeterminate></tristate-checkbox>
+          </td>
+          <td>{{ repr(($refs.ref13 || {}).state) }}</td>
+          <td><!-- filled dynamically --></td>
+        </tr>
+        <tr>
+          <td>Binary</td>
+          <td>
+            <tristate-checkbox ref="ref14" binary></tristate-checkbox>
+          </td>
+          <td>{{ repr(($refs.ref14 || {}).state) }}</td>
+          <td><!-- filled dynamically --></td>
+        </tr>
+        <tr>
+          <td>Regular checkbox (for comparison)</td>
+          <td>
+            <input ref="ref1" name="name1" type="checkbox" v-model="bool_ref"></input>
+          </td>
+          <td>{{ bool_ref }}</td>
+          <td><!-- filled dynamically --></td>
+        </tr>
+        <tr>
+          <td>Regular checkbox with custom <tt>value</tt>/<tt>true-value</tt>/<tt>false-value</tt></td>
+          <td>
+            <input ref="ref2" name="name2" type="checkbox" v-model="custom_bool_ref" value="yes" true-value="active" false-value="inactive"></input>
+          </td>
+          <td><tt>"{{ custom_bool_ref }}"</tt></td>
+          <td><!-- filled dynamically --></td>
+        </tr>
+      </table>
+    </div>
+
+    <input type="submit" value="Send" name="submit1"></input>
+    (and watch query parameters in the address bar)
+  </form>
+
+  <script>
+    function escapeAndStreamline(text) {
+      return text
+        .replace(/binary=""/g, "binary")
+        .replace(/checked=""/g, "checked")
+        .replace(/disabled=""/g, "disabled")
+        .replace(/indeterminate=""/g, "indeterminate")
+        .replace(/ ref="[^"]*"/g, "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;")
+    }
+
+    document.querySelectorAll('#app tr').forEach(function(tr) {
+      var codeTd = tr.querySelector('td:nth-child(4)')
+      if (! codeTd) return
+      var demoTd = tr.querySelector('td:nth-child(2)')
+      codeTd.innerHTML = escapeAndStreamline(demoTd.innerHTML)
+    })
+
+    var app = new Vue({
+    el: '#app',
+      data: {
+        bool_ref: false,
+        custom_bool_ref: 'active',
+        bool_or_null_ref: false,
+        tribool_ref: null,
+        custom_tribool_ref: 'maybe',
+      },
+      methods: {
+        repr: function(value) {
+          switch (value) {
+            case null:
+              return 'null'
+            case true:
+              return 'true'
+            case false:
+              return 'false'
+            default:
+              return '"' + value + '"'
+          }
+        }
+      }
+    })
+
+    app.$forceUpdate();  // because use of $refs in templates needs a second render
+  </script>
+</body>
