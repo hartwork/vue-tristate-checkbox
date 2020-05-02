@@ -1,5 +1,5 @@
 /*
-  5002ae2ee64cdd5b7a04af1db04507829d3f04efd4122a20ce177cdb944c1b1c
+  c532a85bcebc937da9e08af26b9b008af858f4be3c545394ff17233d930f7b35
 
   Vue.js component for a cycling tristate checkbox with…
   - support for form submission (using attribute "name")
@@ -68,7 +68,7 @@ Vue.component('tristate-checkbox', {
       type: String,
       default: 'on'
     },
-    indeterminateValue: {
+    valueIndeterminate: {
       // Form submission value to use for indeterminate state
       type: String,
       default: 'indeterminate'
@@ -130,7 +130,7 @@ Vue.component('tristate-checkbox', {
         case this.trueValue:
           return this.value
         case this.nullValue:
-          return this.indeterminateValue
+          return this.valueIndeterminate
         case this.falseValue:
         default:
           return false  // i.e. no submission as a plain checkbox would do
