@@ -40,31 +40,31 @@
         <tr>
           <td>Initially unchecked</td>
           <td>
-            <tristate-checkbox ref="ref3"></tristate-checkbox>
+            <tristate-checkbox ref="r1"></tristate-checkbox>
           </td>
-          <td>{{ repr(($refs.ref3 || {}).state) }}</td>
+          <td>{{ repr(($refs.r1 || {}).state) }}</td>
           <td><!-- filled dynamically --></td>
         </tr>
         <tr>
           <td>Initially checked</td>
           <td>
-            <tristate-checkbox ref="ref4" checked></tristate-checkbox>
+            <tristate-checkbox ref="r2" checked></tristate-checkbox>
           </td>
-          <td>{{ repr(($refs.ref4 || {}).state) }}</td>
+          <td>{{ repr(($refs.r2 || {}).state) }}</td>
           <td><!-- filled dynamically --></td>
         </tr>
         <tr>
           <td>Initially indeterminate</td>
           <td>
-            <tristate-checkbox ref="ref5" indeterminate></tristate-checkbox>
+            <tristate-checkbox ref="r3" indeterminate></tristate-checkbox>
           </td>
-          <td>{{ repr(($refs.ref5 || {}).state) }}</td>
+          <td>{{ repr(($refs.r3 || {}).state) }}</td>
           <td><!-- filled dynamically --></td>
         </tr>
         <tr>
           <td>With <tt>v-model</tt></td>
           <td>
-            <tristate-checkbox ref="ref7" v-model="tribool_ref"></tristate-checkbox>
+            <tristate-checkbox ref="r4" v-model="tribool_ref"></tristate-checkbox>
           </td>
           <td>{{ repr(tribool_ref) }}</td>
           <td><!-- filled dynamically --></td>
@@ -72,23 +72,23 @@
         <tr>
           <td>With <tt>name</tt> (for form submission)</td>
           <td>
-            <tristate-checkbox ref="ref15" name="name15" checked></tristate-checkbox>
+            <tristate-checkbox ref="r5" name="n5" checked></tristate-checkbox>
           </td>
-          <td>{{ repr(($refs.ref15 || {}).state) }}</td>
+          <td>{{ repr(($refs.r5 || {}).state) }}</td>
           <td><!-- filled dynamically --></td>
         </tr>
         <tr>
           <td>With <tt>name</tt> and custom <tt>value</tt>/<tt>indeterminate-value</tt></td>
           <td>
-            <tristate-checkbox ref="ref16" name="name16" value="yes" indeterminate-value="maybe" indeterminate></tristate-checkbox>
+            <tristate-checkbox ref="r6" name="n6" value="yes" indeterminate-value="maybe" indeterminate></tristate-checkbox>
           </td>
-          <td>{{ repr(($refs.ref16 || {}).state) }}</td>
+          <td>{{ repr(($refs.r6 || {}).state) }}</td>
           <td><!-- filled dynamically --></td>
         </tr>
         <tr>
           <td>Custom <tt>true-value</tt>/<tt>false-value</tt>/<tt>null-value</tt></td>
           <td>
-            <tristate-checkbox ref="ref8" v-model="custom_tribool_ref" true-value="yes" false-value="no" null-value="maybe"></tristate-checkbox>
+            <tristate-checkbox ref="r7" v-model="custom_tribool_ref" true-value="yes" false-value="no" null-value="maybe"></tristate-checkbox>
           </td>
           <td>{{ repr(custom_tribool_ref) }}</td>
           <td><!-- filled dynamically --></td>
@@ -97,60 +97,60 @@
           <td>With label, unbound, surrounding</td>
           <td>
             <label onmousedown="return false">
-              <tristate-checkbox ref="ref9"></tristate-checkbox>
+              <tristate-checkbox ref="r8"></tristate-checkbox>
               <nobr>Click me!</nobr>
             </label>
           </td>
-          <td>{{ repr(($refs.ref9 || {}).state) }}</td>
+          <td>{{ repr(($refs.r8 || {}).state) }}</td>
           <td><!-- filled dynamically --></td>
         </tr>
         <tr>
           <td>With label, bound, sibling</td>
           <td>
-            <tristate-checkbox ref="ref10" id="id10"></tristate-checkbox>
-            <label for="id10" onmousedown="return false">
+            <tristate-checkbox ref="r9" id="i9"></tristate-checkbox>
+            <label for="i9" onmousedown="return false">
               <nobr>Click me!</nobr>
             </label>
           </td>
-          <td>{{ repr(($refs.ref10 || {}).state) }}</td>
+          <td>{{ repr(($refs.r9 || {}).state) }}</td>
           <td><!-- filled dynamically --></td>
         </tr>
         <tr>
           <td>Disabled unchecked</td>
           <td>
-            <tristate-checkbox ref="ref11" disabled></tristate-checkbox>
+            <tristate-checkbox ref="r10" disabled></tristate-checkbox>
           </td>
-          <td>{{ repr(($refs.ref11 || {}).state) }}</td>
+          <td>{{ repr(($refs.r10 || {}).state) }}</td>
           <td><!-- filled dynamically --></td>
         </tr>
         <tr>
           <td>Disabled checked</td>
           <td>
-            <tristate-checkbox ref="ref12" disabled checked></tristate-checkbox>
+            <tristate-checkbox ref="r11" disabled checked></tristate-checkbox>
           </td>
-          <td>{{ repr(($refs.ref12 || {}).state) }}</td>
+          <td>{{ repr(($refs.r11 || {}).state) }}</td>
           <td><!-- filled dynamically --></td>
         </tr>
         <tr>
           <td>Disabled indeterminate</td>
           <td>
-            <tristate-checkbox ref="ref13" disabled indeterminate></tristate-checkbox>
+            <tristate-checkbox ref="r12" disabled indeterminate></tristate-checkbox>
           </td>
-          <td>{{ repr(($refs.ref13 || {}).state) }}</td>
+          <td>{{ repr(($refs.r12 || {}).state) }}</td>
           <td><!-- filled dynamically --></td>
         </tr>
         <tr>
           <td>Binary</td>
           <td>
-            <tristate-checkbox ref="ref14" binary></tristate-checkbox>
+            <tristate-checkbox ref="r13" binary></tristate-checkbox>
           </td>
-          <td>{{ repr(($refs.ref14 || {}).state) }}</td>
+          <td>{{ repr(($refs.r13 || {}).state) }}</td>
           <td><!-- filled dynamically --></td>
         </tr>
         <tr>
           <td>Regular checkbox (for comparison)</td>
           <td>
-            <input ref="ref1" name="name1" type="checkbox" v-model="bool_ref"></input>
+            <input ref="r14" name="n14" type="checkbox" v-model="bool_ref"></input>
           </td>
           <td>{{ bool_ref }}</td>
           <td><!-- filled dynamically --></td>
@@ -158,7 +158,7 @@
         <tr>
           <td>Regular checkbox with custom <tt>value</tt>/<tt>true-value</tt>/<tt>false-value</tt></td>
           <td>
-            <input ref="ref2" name="name2" type="checkbox" v-model="custom_bool_ref" value="yes" true-value="active" false-value="inactive"></input>
+            <input ref="r15" name="n15" type="checkbox" v-model="custom_bool_ref" value="yes" true-value="active" false-value="inactive"></input>
           </td>
           <td><tt>"{{ custom_bool_ref }}"</tt></td>
           <td><!-- filled dynamically --></td>
@@ -177,7 +177,6 @@
         .replace(/checked=""/g, "checked")
         .replace(/disabled=""/g, "disabled")
         .replace(/indeterminate=""/g, "indeterminate")
-        .replace(/ ref="[^"]*"/g, "")
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;")
