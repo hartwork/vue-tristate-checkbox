@@ -5,8 +5,8 @@
 Browsers do not support fully functional tristate checkboxes out of the box.  In particular:
 
 - JavaScript is needed to activate indeterminate state
-- Clicking an indeterminate checkbox never gets you back to state indeterminate, there is no cycling of all three states
-- Form submission only sends `"on"` (or the value from `value=`) but never `"indeterminate"`.
+- Clicking an indeterminate checkbox never gets you back to indeterminate state, there is no cycling of all three states
+- Form submission only sends `"on"` (or the value from `value=".."`) but never `"indeterminate"`.
 
 This Vue component offers a fully functional cycling tristate checkbox.
 It was written by [Sebastian Pipping](https://blog.hartwork.org/)
@@ -24,8 +24,8 @@ If you like this component please support it with a star ★.  Thank you!
 - Support for keyboard navigation using tabulator and spacebar
 - Support for integration with `<label>`, either
   - bound using `for=".."` or
-  - surrounding the component as parent nodes
-- Use of checkbox rendering native to the browser
+  - surrounding the component as a parent node
+- Uses checkbox rendering native to the browser
 
 
 ## Design decisions
@@ -34,7 +34,7 @@ If you like this component please support it with a star ★.  Thank you!
 - Be as close to `<input type="checkbox">` as possible, e.g. support attributes `checked`, `disabled`, `id`, `name`, `value` with the same naming
 - Be as close to Vue's own take on checkboxes, e.g. support attributes `v-model`, `true-value`, `false-value` with the same naming
 - Support a binary mode so the component _can_ take over all checkboxes in an app in a uniform way if desired
-- (The component comes as a plain `.js` rather than a `.vue` file to keep things simple… but I'm open to arguments why `.vue` file would greatly benefit this very case.)
+- (The component comes as a plain `.js` rather than a `.vue` file to keep things simple… but I'm open to arguments why a `.vue` file would greatly benefit this very case.)
 
 
 # How to use
@@ -102,7 +102,7 @@ All properties documented below are **optional**.
 
 | Property | Type | Default value | Description |
 |---|---|---:|---|
-| `v-model` | `String` | n/a | External data property to use state storage |
+| `v-model` | `String` | n/a | External data property to use for storage of state |
 | `true-value` | `String`/`Boolean` | `true` | Model value to use for checked state |
 | `false-value` | `String`/`Boolean` | `false` | Model value to use for unchecked state |
 | `null-value` | `String`/`Boolean` | `null` | Model value to use for indeterminate state |
@@ -135,7 +135,7 @@ Useful for URLs and binding a label with `for=".."`.
 
 | Property | Type | Default value | Description |
 |---|---|---:|---|
-| `id` | `String` | n/a | HTML node ID to use for the checkbox node of the component |
+| `id` | `String` | n/a | HTML node ID to use for the checkbox `<input>` node of the component |
 
 
 If you like this component please support it with a star ★.  Thank you!
