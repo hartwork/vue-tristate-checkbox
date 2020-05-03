@@ -1,0 +1,41 @@
+<!--
+  Copyright (C) 2020 Sebastian Pipping <sebastian@pipping.org>
+
+  Licensed under the MIT license
+-->
+<head>
+  <!-- development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script src="vue_cycling_tristate_checkbox_native.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <label>
+      <tristate-checkbox ref="r1" indeterminate></tristate-checkbox>
+      {{ triboolToStr(($refs.r1 || {}).state) }}
+    </label>
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      methods: {
+        triboolToStr: function(value) {
+          switch (value) {
+            case null:
+              return 'null'
+            case false:
+              return 'false'
+            case true:
+            default:
+              return 'true'
+          }
+        }
+      }
+    })
+
+    app.$forceUpdate();  // hacky use of $refs above needs a second render
+  </script>
+</body>
