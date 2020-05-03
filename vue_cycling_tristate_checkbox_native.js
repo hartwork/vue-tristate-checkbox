@@ -1,19 +1,10 @@
 /*
-  c532a85bcebc937da9e08af26b9b008af858f4be3c545394ff17233d930f7b35
-
-  Vue.js component for a cycling tristate checkbox with…
-  - support for form submission (using attribute "name")
-  - cycles throught all three states while clicking: off, on, intermediate, off, ..
-  - support for keyboard navigation using tabulator and spacebar
-  - support for integration with labels, either
-    - bound using attribute "for" or
-    - surrounding the component as parent nodes
-  - use of checkbox rendering native to the browser
-  - support for setting custom submission values
+  Vue.js component implementing a cycling tristate checkbox that supports form submission
 
   Copyright (C) 2020 Sebastian Pipping <sebastian@pipping.org>
-
   Licensed under the MIT license
+
+  5ed566ba1746f5a4d47330308b435ce006e21782ef58d7c741edf25b59b21ab7
 */
 
 Vue.component('tristate-checkbox', {
