@@ -181,6 +181,7 @@
         .replace(/checked=""/g, "checked")
         .replace(/disabled=""/g, "disabled")
         .replace(/indeterminate=""/g, "indeterminate")
+        .replace(/<\/?nobr>/g, "")
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;")
