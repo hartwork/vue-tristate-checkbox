@@ -12,7 +12,7 @@
 
 <body>
   <div id="app">
-    <label>
+    <label style="user-select: none">
       <tristate-checkbox ref="r1" indeterminate></tristate-checkbox>
       {{ triboolToStr(($refs.r1 || {}).state) }}
     </label>

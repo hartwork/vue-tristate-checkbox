@@ -18,6 +18,10 @@
       margin-top: 20px;
       margin-right: 10px;
     }
+
+    label {
+      user-select: none;
+    }
   </style>
 
   <!-- development version, includes helpful console warnings -->
@@ -96,7 +100,7 @@
         <tr>
           <td>With label, unbound, surrounding</td>
           <td>
-            <label onmousedown="return false">
+            <label>
               <tristate-checkbox ref="r8"></tristate-checkbox>
               <nobr>Click me!</nobr>
             </label>
@@ -108,7 +112,7 @@
           <td>With label, bound, sibling</td>
           <td>
             <tristate-checkbox ref="r9" id="i9"></tristate-checkbox>
-            <label for="i9" onmousedown="return false">
+            <label for="i9">
               <nobr>Click me!</nobr>
             </label>
           </td>
