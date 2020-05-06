@@ -1,5 +1,14 @@
 # Cycling Tristate Checkbox Vue.js Component
 
+An animation says more than a thousand words:
+
+![Chromium, Linux](screenshots/chromium-linux-animated.gif)
+![Firefox, Linux, GTK theme "Adapta"](screenshots/firefox-linux-adapta-animated.gif)
+
+Left: Chromium, Linux<br>
+Right: Firefox, Linux, GTK theme "[Adapta](https://github.com/adapta-project/adapta-gtk-theme)"
+
+
 ## Why this component?
 
 Browsers do not support fully functional tristate checkboxes out of the box.  In particular:
