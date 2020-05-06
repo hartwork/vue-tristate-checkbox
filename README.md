@@ -138,4 +138,15 @@ Useful for URLs and binding a label with `for=".."`.
 | `id` | `String` | n/a | HTML node ID to use for the checkbox `<input>` node of the component |
 
 
+# Contributing
+
+Bug reports, feature requests, and pull requests are welcome, in general.
+
+
+# License
+
+**vue-tristate-checkbox** is licensed under
+the [MIT license](https://opensource.org/licenses/MIT).
+
+
 If you like this component please support it with a star ★.  Thank you!
