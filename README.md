@@ -111,19 +111,19 @@ All properties documented below are **optional**.
 
 | Property | Type | Default value | Description |
 |---|---|---:|---|
-| `v-model` | `String` | n/a | External data property to use for storage of state |
-| `true-value` | `String`/`Boolean` | `true` | Model value to use for checked state |
-| `false-value` | `String`/`Boolean` | `false` | Model value to use for unchecked state |
-| `null-value` | `String`/`Boolean` | `null` | Model value to use for indeterminate state |
+| v-model | String | n/a | External data property to use for storage of state |
+| true-value | String/Boolean | true | Model value to use for checked state |
+| false-value | String/Boolean | false | Model value to use for unchecked state |
+| null-value | String/Boolean | null | Model value to use for indeterminate state |
 
 
 ## Form submission
 
 | Property | Type | Default value | Description |
 |---|---|---:|---|
-| `name` | `String` | n/a | Name to use during form submission; set to enable form submission |
-| `value` | `String` | `"on"` | Form submission value to use for checked state |
-| `value-indeterminate` | `String` | `"indeterminate"` | Form submission value to use for indeterminate state |
+| name | String | n/a | Name to use during form submission; set to enable form submission |
+| value | String | "on" | Form submission value to use for checked state |
+| value-indeterminate | String | "indeterminate" | Form submission value to use for indeterminate state |
 
 
 ## Behavior switches
@@ -132,10 +132,10 @@ These properties are mostly useful in absence of `v-model`.
 
 | Property | Type | Default value | Description |
 |---|---|---:|---|
-| `binary` | `Boolean` | `false` | Whether to revert back to a binary checkbox, wins over indeterminate |
-| `checked` | `Boolean` | `false` | Whether to start out checked |
-| `disabled` | `Boolean` | `false` | Whether to start out disabled |
-| `indeterminate` | `Boolean` | `false` | Whether to start out indeterminate, wins over checked |
+| binary | Boolean | false | Whether to revert back to a binary checkbox, wins over indeterminate |
+| checked | Boolean | false | Whether to start out checked |
+| disabled | Boolean | false | Whether to start out disabled |
+| indeterminate | Boolean | false | Whether to start out indeterminate, wins over checked |
 
 
 ## HTML anchor
@@ -144,7 +144,7 @@ Useful for URLs and binding a label with `for=".."`.
 
 | Property | Type | Default value | Description |
 |---|---|---:|---|
-| `id` | `String` | n/a | HTML node ID to use for the checkbox `<input>` node of the component |
+| id | String | n/a | HTML node ID to use for the checkbox <input> node of the component |
 
 
 # Contributing
