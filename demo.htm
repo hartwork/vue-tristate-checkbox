@@ -182,6 +182,8 @@
         .replace(/disabled=""/g, "disabled")
         .replace(/indeterminate=""/g, "indeterminate")
         .replace(/<\/?nobr>/g, "")
+        .replace(/>[ \n]*/g, ">")
+        .replace(/[ \n]*</g, "<")
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;")
