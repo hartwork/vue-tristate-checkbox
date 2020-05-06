@@ -4,8 +4,8 @@
 
 Browsers do not support fully functional tristate checkboxes out of the box.  In particular:
 
-- JavaScript is needed to activate indeterminate state
-- Clicking an indeterminate checkbox never gets you back to indeterminate state, there is no cycling of all three states
+- JavaScript is needed to activate indeterminate state.
+- Clicking an indeterminate checkbox never gets you back to indeterminate state, there is no cycling through all three states out of the box.
 - Form submission only sends `"on"` (or the value from `value=".."`) but never `"indeterminate"`.
 
 This Vue component offers a fully functional cycling tristate checkbox.
